@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 680px;
+    height: 640px;
+    justify-content: center;
+}
+
+.squares {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: solid black 1px;
+}
+
