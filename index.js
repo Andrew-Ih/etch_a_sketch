@@ -1,14 +1,32 @@
 
 const container = document.querySelector('.container');
 
-// const squares = document.createElement('div');
-// squares.classList.add('squares');
+function createGrid() {
+    const gridSize = 16;
 
-// container.appendChild(squares);
+    const gridRow = 560/gridSize - 2;
+    const gridCol = 560/gridSize ;
 
-for(let i=0 ; i < 256; i++){
-    const squares = document.createElement('div');
-    squares.classList.add('squares');
+    for(let i=0 ; i < gridSize*gridSize; i++){
+        const squares = document.createElement('div');
+        squares.classList.add('squares');
 
-    container.appendChild(squares);
+        container.appendChild(squares);
+
+        squares.style.width = gridRow +'px';
+    }
+
+    return document.querySelectorAll('.squares');
 }
+
+function changeColor() {
+    const box = createGrid();
+    box.forEach((square) => {
+        square.addEventListener("mouseenter", () => {
+            square.style.backgroundColor = "green";
+        });
+    });
+}
+
+// createGrid();
+changeColor();
