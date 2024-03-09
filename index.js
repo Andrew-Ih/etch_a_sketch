@@ -1,11 +1,12 @@
 
 const container = document.querySelector('.container');
 
-function createGrid() {
-    const gridSize = 16;
+function createGrid(gridSize) {
 
     const gridRow = 560/gridSize - 2;
-    const gridCol = 560/gridSize ;
+
+    // Clear existing grid
+    container.innerHTML = '';
 
     for(let i=0 ; i < gridSize*gridSize; i++){
         const squares = document.createElement('div');
@@ -19,14 +20,30 @@ function createGrid() {
     return document.querySelectorAll('.squares');
 }
 
-function changeColor() {
-    const box = createGrid();
+function changeColor(box) {
     box.forEach((square) => {
         square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "green";
+            // Generate random color
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16)
+
+            square.style.backgroundColor = randomColor;
         });
     });
 }
 
-// createGrid();
-changeColor();
+// Initial grid size
+const defaultGridSize = 16;
+
+// Create grid with default size when the page loads
+const defaultBox = createGrid(defaultGridSize);
+changeColor(defaultBox);
+
+const buttons = document.querySelector('button');
+
+buttons.addEventListener('click', () => {
+    const gridSize = prompt("Please enter a grid size (1-100)");
+
+    const box = createGrid(gridSize);
+
+    changeColor(box)
+});
