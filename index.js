@@ -28,12 +28,6 @@ function changeColor(box) {
 
             square.style.backgroundColor = randomColor;
         });
-
-        // Touch event for mobile devices
-        square.addEventListener("touchstart", (event) => {
-            event.preventDefault(); // Prevent default touch behavior
-            changeSquareColor(square);
-        });
     });
 }
 
