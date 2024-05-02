@@ -1,4 +1,5 @@
 # etch_a_sketch
+<img width="1512" alt="Screenshot 2024-05-02 at 2 21 38 PM" src="https://github.com/Andrew-Ih/etch_a_sketch/assets/148708289/038c4983-5ad9-4963-bc16-c5d1571e2524">
 
 Project: Etch-a-sketch
 
